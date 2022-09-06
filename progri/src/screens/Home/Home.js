@@ -1,14 +1,14 @@
 import React from "react";
 import Listado from "../../components/Listado/Listado";
+import Busqueda from "../../components/Busqueda/Busqueda";
 
 
 function Home() {
     return (
         <React.Fragment>
-            {/* formulario de busqueda */}
-            
-            <Listado  funcionalidades={{verTodas: true, formFiltro: false, cargarMas: false, populares: true}} />
-            <Listado  funcionalidades={{verTodas: true, formFiltro: false, cargarMas: false, populares: false}} />
+            <Busqueda/>
+            <Listado  funcionalidades={{populares: true}} />
+            <Listado  funcionalidades={{populares: false}} />
 
         </React.Fragment>
 

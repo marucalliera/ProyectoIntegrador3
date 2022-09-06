@@ -7,7 +7,7 @@ import Home from './screens/Home/Home';
 import Cartel from './screens/Cartel/Cartel';
 import Populares from './screens/Populares/Populares';
 import Favoritos from './screens/favoritos/favoritos';
-import Detalle from './screens/detallePel/detallePel';
+import detallePel from './screens/detallePel/detallePel';
 import NotFound from './screens/NotFound/NotFound';
 
 function App() {
@@ -22,11 +22,11 @@ function App() {
         <Switch>
           
           <Route path='/' exact={true} component={Home} />
-          <Route path='/populares' exact={true} component={Cartel} />
-          <Route path='/cartel' exact={true} component={Populares} />
           <Route path='/favoritos' exact={true} component={Favoritos} />
-          <Route path='/unapelicula/id/:id' component={Detalle}/>
-          
+          <Route path='/populares' exact={true} component={Populares} />
+          <Route path='/cartelera' exact={true} component={Cartel} />
+          <Route path='/unapelicula/id/:id' component={detallePel}/>
+          {/*<Route path='/busqueda/id/:id' component={SearchResult}/>*/}
           <Route path='' component={NotFound} />
           
         </Switch>
