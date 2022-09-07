@@ -4,9 +4,9 @@ import './Footer.css'
 function Footer(){
     return (
             <div id='footer'>
-                <h3>Federico Kozak</h3>
-                <h3>Martina Coletto</h3>
-                <h3>Martin Quijano</h3>
+                <h3>Mercedes Lombardi</h3>
+                <h3>Maria Guadalupe Calliera</h3>
+                <h3>Lara Fernandez Olveira</h3>
             </div>
     )
 }
