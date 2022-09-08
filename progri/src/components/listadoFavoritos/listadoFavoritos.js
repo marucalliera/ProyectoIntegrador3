@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import UnaPeliculaListado from '../UnaPeliculaListado/UnaPeliculaListado';
 
 
-let apikey = '66374e925f9ce0061d8e10191732f374'
+let apikey = '73bb2c441012fc5a8247a1d5cb33d69a'
 class ListadoFavs extends Component{  
     constructor(props){
         super(props);
@@ -15,7 +15,7 @@ class ListadoFavs extends Component{
         let listaFavs = []
         if(this.props.funcionalidades.tipo === 'peliculas') {listaFavs = JSON.parse(localStorage.getItem('favoritos'));}
         listaFavs.map((id)=> {
-            fetch(this.props.funcionalidades.tipo === 'peliculas' ? `https://api.themoviedb.org/3/movie/${id}?api_key=${apikey}`:'fede')
+            fetch(this.props.funcionalidades.tipo === 'peliculas' ? `https://api.themoviedb.org/3/movie/${id}?api_key=${apikey}`:'MARU')
             .then(response=>response.json())
             .then(data=> {
                 let listaDatos = this.state.datos;

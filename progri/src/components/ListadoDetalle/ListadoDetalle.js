@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import UnaPeliculaListado from '../UnaPeliculaListado/UnaPeliculaListado';
 import {Link} from 'react-router-dom';
 
-let apikey = '66374e925f9ce0061d8e10191732f374'
+let apikey = '73bb2c441012fc5a8247a1d5cb33d69a'
 class ListadoDetalle extends Component{  
     constructor(props){
         super(props);
@@ -37,7 +37,7 @@ class ListadoDetalle extends Component{
     };
     saveChanges(e){ 
         this.setState({input: e.target.value, pageNumber: 0}); 
-        fetch (`https://api.themoviedb.org/3/movie/${this.state.input}/lists?api_key=66374e925f9ce0061d8e10191732f374&page=${this.state.pageNumber}`)
+        fetch (`https://api.themoviedb.org/3/movie/${this.state.input}/lists?=73bb2c441012fc5a8247a1d5cb33d69a&page=${this.state.pageNumber}`)
         .then(response=>response.json())
         .then(data=> {
             console.log(data)
