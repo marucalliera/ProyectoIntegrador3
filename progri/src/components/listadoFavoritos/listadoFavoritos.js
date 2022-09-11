@@ -1,10 +1,17 @@
-import React, {Component} from 'react';
-import UnaPeliculaListado from '../UnaPeliculaListado/UnaPeliculaListado';
+import React from "react";
+import ListadoFav from "../../components/listadoFavoritos/listadoFavoritos";
 
 
-let apikey = '73bb2c441012fc5a8247a1d5cb33d69a'
-function ListadoFavs() {
-    
+function Favoritos() {
+    return (
+        <React.Fragment>
+            {/* formulario de busqueda */}
+            
+            <ListadoFav  funcionalidades={{tipo:'peliculas',formFiltro: true}} />
+
+        </React.Fragment>
+
+    );
 }
 
-export default ListadoFavs;
+export default Favoritos;
