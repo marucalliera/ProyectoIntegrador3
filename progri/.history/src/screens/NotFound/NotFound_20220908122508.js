@@ -1,11 +1,10 @@
 import React from "react";
-import Listado from "../../components/Listado/Listado";
 
 
 function NotFound() {
     return (
         <React.Fragment>
-            <h1>Presiona nuevamente, </h1>
+            <h2>Acá no está lo que buscás. Presiona nuevamente, </h2>
 
         </React.Fragment>
 

@@ -1,11 +1,10 @@
 import React from "react";
-import Listado from "../../components/Listado/Listado";
 
 
 function NotFound() {
     return (
         <React.Fragment>
-            <h1>Presiona recargar numente. Hubo un error de ruta</h1>
+          <h2>Acá no está lo que buscás</h2>
 
         </React.Fragment>
 

@@ -5,7 +5,7 @@ import React from "react";
 function NotFound() {
     return (
         <React.Fragment>
-            <h1>Presione recargar. Hubo un error de ruta</h1>
+            <h2>404 Acá no está lo que buscás</h2>
 
         </React.Fragment>
 
