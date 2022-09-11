@@ -1,14 +1,7 @@
-//import { relativeTimeThreshold } from 'moment';
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-class Busqueda extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            input: '',
-        }
-    }
+c
 GuardarCambios (event){
     this.setState({input:event.target.value})
 }
