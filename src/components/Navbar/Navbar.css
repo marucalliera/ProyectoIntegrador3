@@ -5,7 +5,6 @@ nav{
     justify-content: space-between;
     padding: 0 20px;
     background-color:bisque;
-    color: #fff
 }
 
 nav ul {
@@ -15,11 +14,16 @@ nav ul {
     align-items: center;
 }
 
-.main-nav li,
-.user li {
+.main-nav li{
     margin: 0 10px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+}
+
+.main-nav li:hover{
+    border:1px solid black;
+    padding: 2px;
+    font: bold;
 }
