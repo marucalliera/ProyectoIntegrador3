@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import UnaPeliculaListado from '../UnaPeliculaListado/UnaPeliculaListado';
 import {Link} from 'react-router-dom';
+import './ListadoDetalle.css'
 
 let apikey = '73bb2c441012fc5a8247a1d5cb33d69a'
 class ListadoDetalle extends Component{  

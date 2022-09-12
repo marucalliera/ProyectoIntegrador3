@@ -1,6 +1,7 @@
 import React from "react";
 import Busqueda from '../../components/Busqueda/Busqueda'
 import ListadoBusqueda from "../../components/ListadoBusqueda/ListadoBusqueda";
+
 function resultadoBusqueda(props) {
     return (
         <React.Fragment>            
