@@ -1,0 +1,44 @@
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.character-card{
+    width: 0%;
+    padding: 0%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+.character-card img{
+    width: 0;
+}
+.character-card:hover,
+.active{
+box-shadow: 0rem 0rem 0px 0px rgb(0 0 0/ 25%);
+}
+
+
+.more:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.card-title {
+    font-size:larger;
+    color: blue;
+    font-weight: 500;
+    margin-bottom: 20%;
+}
+
+.containerFavCard {
+    padding: 0.4%;
+    margin-bottom: 8%;
+    text-align: center;
+    width: 20%;
+    outline-color: #f36bff;
+    outline-style: solid;
+    color: #f36bff;
+    font-weight: 300;
+}
+
