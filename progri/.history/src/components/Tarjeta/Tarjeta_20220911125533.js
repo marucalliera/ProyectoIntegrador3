@@ -1,1 +1,0 @@
-<Route path='' component={NotFound} />
