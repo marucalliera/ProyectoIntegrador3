@@ -1,0 +1,12 @@
+.uk-navbar-right form input {
+    border-radius: 5px;
+    border       : 2px solid black;
+    width: 100px;
+    height: 80px;
+}
+
+.but{
+    border-radius: 5px;
+    width: 100px;
+    height: 20px;
+}

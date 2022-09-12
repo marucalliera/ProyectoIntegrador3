@@ -1,6 +1,7 @@
 //import { relativeTimeThreshold } from 'moment';
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import './busqueda.css';
 
 class Busqueda extends Component{
     constructor(props){
@@ -21,11 +22,13 @@ PrevenirCarga (event){
     render () {
         return (
             <React.Fragment>
-                <form onSubmit = {(e)=> this.prevenirCarga(e)}>
-                    <input type='text' onChange = {(e) => this.GuardarCambios(e)} value = {this.state.input}/>
-                    <Link to={`/busqueda/id/${this.state.input}`}><button type='submit'/></Link>
+                <div className="uk-navbar-right">
+                    <form onSubmit = {(e)=> this.prevenirCarga(e)} className="uk-search uk-search-default">
+                        <input type='search' className="uk-search-input" placeholder="Buscar..." onChange = {(e) => this.GuardarCambios(e)} value = {this.state.input} />
+                        <Link to={`/busqueda/id/${this.state.input}`}><button type='submit' className='but'/></Link>
                     
-                </form>
+                    </form>
+                </div>
             </React.Fragment>
                 
         )
