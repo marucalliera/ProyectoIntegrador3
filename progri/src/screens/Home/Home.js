@@ -1,6 +1,7 @@
 import React from "react";
 import Listado from "../../components/Listado/Listado";
 import Busqueda from "../../components/Busqueda/Busqueda";
+import "./Home.css"
 
 
 function Home() {
