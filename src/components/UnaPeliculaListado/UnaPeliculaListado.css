@@ -7,10 +7,10 @@
     margin-bottom: 50%;
     text-align: center;
     width: 120%;
-    outline-color: #f36bff;
+    outline-color: #000294;
     outline-style: double;
-    color: #f36bff;
-    font-weight: 300;
+    color: #2d55c2;
+    font-weight: 500;
     
 }
 .hide{
@@ -18,7 +18,7 @@
 }
 .card-title {
     font: size 15px;;
-    color: blue;
+    color: rgb(0, 149, 255);
     font-weight: 130;
     margin-bottom: 50%;
 }
@@ -37,7 +37,7 @@
 }
 .character-card:hover,
 .active{
-box-shadow: 3rem -3rem 15px 9px rgb(255 255 255/ 25%);
+box-shadow: 0rem -2rem 8px 7px rgb(255, 0, 111);
 }
 
 
