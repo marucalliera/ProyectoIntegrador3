@@ -1,23 +1,35 @@
 import React, {Component} from 'react';
 
 
-class Form extends Component {
-    constructor (props){
+class Form extends Component{
+    constructor(props){
         super(props);
-        this.state = {value:""}
+        this.state={
+            value:''
+        }
     }
-    evitarRefresh(event){
-        event.preventDefault();
+
+    evitarRefresh(evento){
+        evento.preventDefault();
+        
     }
+
     
-    capturarDatos(event){
-        this.setState ({value:event.target.value})
+    capturarDatos(evento){
+        this.setState({
+          value: evento.target.value,  
+        },()=>this.props.filtrarPelis(this.state.value))
     }
-    
+
+
     render(){
         return(
-            <form onSubmit={(event)=> this.evitarRefresh(event)}> 
-                <input oncharge = {(event) => this.capturarDatos(event)} value = {this.state.value} />
-            
-            
-             </form> )}}
+            <form onSubmit={(evento)=>this.evitarRefresh(evento)} className='mb-4'>
+                <input onChange={(evento)=>this.capturarDatos(evento)} type="text" name="usuario" value={this.state.value} />
+                
+            </form>)
+
+        }
+}
+
+export default Form;
