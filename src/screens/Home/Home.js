@@ -31,7 +31,7 @@ class Home extends Component {
     }
 
     render(){
-        console.log(this.state.input);
+        //console.log(this.state.input);
         return (
             <>
             <Busqueda GuardarCambios={(e)=>this.GuardarCambios(e)} PrevenirCarga={(e)=>this.PrevenirCarga(e)} value={this.state.input} />
