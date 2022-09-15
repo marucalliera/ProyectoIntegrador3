@@ -13,15 +13,11 @@ class Form extends Component{
         evento.preventDefault();
         
     }
-
-    
     capturarDatos(evento){
         this.setState({
           value: evento.target.value,  
         },()=>this.props.filtrarPelis(this.state.value))
     }
-
-
     render(){
         return(
             <form onSubmit={(evento)=>this.evitarRefresh(evento)} className='mb-4'>

@@ -27,7 +27,7 @@ function App() {
           <Route path='/populares' exact={true} component={Populares} />
           <Route path='/cartel' exact={true} component={Cartel} />
           <Route path='/unapelicula/id/:id' component={detallePel}/>
-          <Route path='/busqueda/id/:id' component={resultadoBusqueda}/>
+          <Route path='/busqueda/:name' component={resultadoBusqueda}/>
           <Route path='' component={NotFound} />
           
         </Switch>

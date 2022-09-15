@@ -20,17 +20,23 @@ class ListadoBusqueda extends Component{
         .catch(error => console.log(error))
     }
    
+    componentDidUpdate() {
+        if (this.state.info !== this.props.busqueda) {
+            fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apikey}&language=en-US&query=${this.props.busqueda}&page=1&include_adult=true`)
+                .then(res => res.json())
+                .then(data => this.setState({
+                    info: data.results,
+                }))
+                .catch()
+        }
+    return    };
 
     render () {
         return (
             <React.Fragment>
                 {
-                this.state.info === [] ? <h3>Cargando</h3> : 
-                    <div>
-                        {
-                        this.state.info.map((unaPelicula, idx) => <Tarjeta info={unaPelicula} key={idx}/>)
-                        }
-                    </div>
+                this.state.info === [] ? <h3>Cargando</h3> : <div> { this.state.info.map((unaPelicula, idx) => <Tarjeta info={unaPelicula} key={idx}/>)  }
+                </div>
             }
             </React.Fragment>
         )
