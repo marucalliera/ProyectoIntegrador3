@@ -79,8 +79,7 @@ class UnaPeliculaListado extends Component{
             })
 
         }
-        //Paso 2: Agregar un id al array
-        favoritos.push(id);
+
         //Paso 3: Transformar el array en cadena de texto 
         let favoritosToString = JSON.stringify(favoritos);
         //Paso 4: Meterlo en localStorage. Con set item le decimos que en favoritos le guardamos el favoritos to string
@@ -94,7 +93,7 @@ class UnaPeliculaListado extends Component{
             <article className='character-card' >
             <p onClick = {()=>this.agregarYQuitarDeFavoritos(this.props.props.id)}>{this.state.favMessage}</p>
             <Link to={`/unapelicula/id/${this.props.props.id}`}>
-            <img src={`https://image.tmdb.org/t/p/w342/${this.props.props.poster_path}`} alt="" />
+            <img src={`https://image.tmdb.org/t/p/w342${this.props.props.poster_path}`} alt="" />
             </Link> 
             <h2> {this.props.props.title} </h2> 
             <p onClick={() => this.verDescripcion()} className='more'> {this.state.textoDescripcion} </p>

@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Link} from 'react-router-dom';
 import Tarjeta from '../../components/Tarjeta/Tarjeta';
 
 class listadoFavoritos extends Component{
@@ -24,25 +23,32 @@ class listadoFavoritos extends Component{
         //recorrer el array y pedirla al endpoint por los datos de cada personaje.
         favoritos.forEach(unIdFavorito => {
             //pedir por cada id los datos del personaje
-            let url = `/unapelicula/id/${unIdFavorito}`
+            //https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
+            let apikey = '73bb2c441012fc5a8247a1d5cb33d69a'
+            let url = `https://api.themoviedb.org/3/movie/${unIdFavorito}?api_key=${apikey}&language=en-US`
             fetch(url)
                 .then(res => res.json())
-                .then(data => detallePel.push(data))
+                .then(data => {
+                    detallePel.push(data)
+                    this.setState({
+                        detallePel : detallePel
+                    })
+                })
                 .catch(e => console.log(e))
         })
 
-        console.log(detallePel);
     }
 
     }
 
     render(){
+        console.log(this.state.detallePel);
         return(
             <React.Fragment>
                 <h2>Mis Peliculas Favoritas</h2>
                  <section className='card-container'>
                     { 
-                        this.state.detallePel.map( (detallePel, idx) => <Tarjeta key={detallePel.name+idx} info={detallePel}/>)
+                        this.state.detallePel.map((detallePel, idx) => <Tarjeta key={detallePel.title+idx} info={detallePel}/>)
                     }
                 </section>
             </React.Fragment>

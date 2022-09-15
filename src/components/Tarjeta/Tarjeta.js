@@ -77,8 +77,7 @@ class Tarjeta extends Component{
             })
 
         }
-        //Paso 2: Agregar un id al array
-        favoritos.push(id);
+
         //Paso 3: Transformar el array en cadena de texto 
         let favoritosToString = JSON.stringify(favoritos);
         //Paso 4: Meterlo en localStorage. Con set item le decimos que en favoritos le guardamos el favoritos to string
@@ -93,7 +92,7 @@ class Tarjeta extends Component{
             <React.Fragment>
                     <article className='character-card' >  
                         <p onClick = {()=>this.agregarYQuitarDeFavoritos(this.props.info.id)}>{this.state.favMessage}</p>
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.info.poster_path}`}/>
+                        <img src={`https://image.tmdb.org/t/p/w342${this.props.info.poster_path}`} alt=''/>
                         <h2>{this.props.info.title}</h2>
                         <p className={this.state.clase}>{this.props.info.overview}</p>
                         <p onClick={() => this.descripcion()}>{this.state.texto}</p>

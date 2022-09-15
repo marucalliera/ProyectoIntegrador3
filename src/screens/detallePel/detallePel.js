@@ -29,7 +29,7 @@ class Detail extends Component{
                 {
                 this.state.info === [] ? <h3>Cargando</h3> : 
                     <div>
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.info.poster_path}`}/>
+                        <img src={`https://image.tmdb.org/t/p/w342${this.state.info.poster_path}`} alt=''/>
                         <h1>  {this.state.info.title}  </h1>
                         <p>{this.state.info.popularity}</p>
                         <p>{this.state.info.release_date}</p>
