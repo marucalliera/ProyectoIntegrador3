@@ -23,8 +23,9 @@ class Home extends Component {
                 this.state.resultadoBusqueda.length <= 0 ?
                 <React.Fragment>
                     <br></br>
-                    <Listado  funcionalidades={{populares: true}} />
-                    <Listado  funcionalidades={{populares: false}} />
+                    <Listado  funcionalidades={{verTodas: true, filtroFormulario: false, CargarMas: false, populares: true}} />
+                    <Listado  funcionalidades={{verTodas: true, filtroFormulario: false, CargarMas: false, populares: false}} />
+
                 </React.Fragment>
                 :
                 this.state.resultadoBusqueda.map((movie, idx) => <UnaPeliculaListado key={movie.title + idx} props={movie}/>)
