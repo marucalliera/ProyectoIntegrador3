@@ -3,7 +3,7 @@ import Listado from "../../components/Listado/Listado";
 import Busqueda from "../../components/Busqueda/Busqueda";
 import "./Home.css"
 import CharacterCard from "../../components/CharacterCard /CharacterCard";
-import UnaPeliculaListado from "../../components/UnaPeliculaListado/UnaPeliculaListado";
+import UnaPelicula from "../../components/UnaPelicula/UnaPelicula";
 
 
 class Home extends Component {
@@ -28,7 +28,7 @@ class Home extends Component {
 
                 </React.Fragment>
                 :
-                this.state.resultadoBusqueda.map((movie, idx) => <UnaPeliculaListado key={movie.title + idx} props={movie}/>)
+                this.state.resultadoBusqueda.map((movie, idx) => <UnaPelicula key={movie.title + idx} props={movie}/>)
             }
             </>
     

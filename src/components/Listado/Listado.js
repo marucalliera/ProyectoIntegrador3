@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import UnaPeliculaListado from '../UnaPeliculaListado/UnaPeliculaListado';
+import UnaPelicula from '../UnaPelicula/UnaPelicula';
 import Form from '../Form/Form';
 import './Listado.css';
 import {Link} from 'react-router-dom'
@@ -14,29 +14,30 @@ class Listado extends Component{
         this.state = {
             peliculas: [],
             mapeliculas: [],
-            pageNumber: 1,
+            numeroPagina: 1,
         }
     }
     componentDidMount () {
-        fetch(this.props.funcionalidades.populares ? `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&page=${this.state.pageNumber}` : `https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}&page=${this.state.pageNumber}`)
+        fetch(this.props.funcionalidades.popular ? `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&page=${this.state.numeroPagina}` : `https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}&page=${this.state.numeroPagina}`)
         .then(response=>response.json())
         .then(data=> {
            /*  console.log(data) */
-            this.setState({peliculas: data.results,
+            this.setState({
+                peliculas: data.results,
                 mapeliculas: data.results,
-                 pageNumber: this.state.pageNumber +1})
+                numeroPagina: this.state.numeroPagina})
             })
         .catch(error=>console.log('El error fue: ' + error))
     }
 
     cargarMas(){
-        let url = this.props.funcionalidades.populares ? `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&page=${this.state.pageNumber }` : `https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}&page=${this.state.pageNumber }`;
+        let url = this.props.funcionalidades.popular ? `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&page=${this.state.numeroPagina }` : `https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}&page=${this.state.numeroPagina }`;
         fetch(url)
             .then(res => res.json())
             .then(data => this.setState(
                 {  mapeliculas: this.state.peliculas.concat(data.results),
                     peliculas: this.state.mapeliculas.concat(data.results),
-                   pageNumber:data.page + 1,
+                    numeroPagina:data.page + 1,
                 }
             ))
             .catch( error => console.log(error))
@@ -55,7 +56,7 @@ class Listado extends Component{
 
     render () {
          console.log(this.props.funcionalidades) 
-        let titulo = this.props.funcionalidades.populares ? 'Peliculas Populares' : 'Peliculas en Cartel'
+        let titulo = this.props.funcionalidades.popular ? 'Peliculas Populares' : 'Peliculas en Cartel'
         return (
             <React.Fragment>
                 <h1>{titulo}</h1>
@@ -64,11 +65,11 @@ class Listado extends Component{
                 </div>
                 <section className='card-container'>
                     {this.state.mapeliculas === '' ? <h3>Cargando ...</h3> : 
-                    this.state.mapeliculas.map((unaPelicula, idx) => <UnaPeliculaListado props={unaPelicula} key={idx} />)
+                    this.state.mapeliculas.map((unaPelicula, idx) => <UnaPelicula props={unaPelicula} key={idx} />)
                     }
                 </section>     
-                {this.props.funcionalidades.verTodas ? <Link to={ this.props.funcionalidades.populares ? '/populares' : '/cartelera'}>Ver todas las  {this.props.funcionalidades.populares ? 'Peliculas Populares' : 'Peliculas en Cartel'}</Link>: ''}
-                {this.props.funcionalidades.CargarMas ?   <button className='cargar' type="button" onClick={ ()=>this.cargarMas()}>Cargar más películas</button>  : ''}
+                {this.props.funcionalidades.verTodas ? <Link to={ this.props.funcionalidades.popular ? '/populares' : '/cartelera'}> Ver Todas Las Peliculas  {this.props.funcionalidades.popular ? 'Peliculas Populares' : 'Peliculas en Cartel'}</Link>: ''}
+                {this.props.funcionalidades.CargarMas ?   <button className='cargar' type="button" onClick={ ()=>this.cargarMas()}> Cargar Más Películas </button>  : ''}
            
             </React.Fragment>
         )

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Tarjeta from '../Tarjeta/Tarjeta';
-import './UnaPeliculaListado.css'
+import './UnaPelicula.css'
 
 
-class UnaPeliculaListado extends Component{
+class UnaPelicula extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -105,5 +105,5 @@ class UnaPeliculaListado extends Component{
     }
 }
 
-export default UnaPeliculaListado;
+export default UnaPelicula;
 

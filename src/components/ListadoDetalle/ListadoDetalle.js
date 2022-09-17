@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import UnaPeliculaListado from '../UnaPeliculaListado/UnaPeliculaListado';
+import UnaPelicula from '../UnaPelicula/UnaPelicula';
 import {Link} from 'react-router-dom';
 
 
@@ -9,12 +9,12 @@ class ListadoDetalle extends Component{
         super(props);
         this.state = {
             datos: '',
-            pageNumber: 1,
+            numeroPagina: 1,
             input: ''
         }
     }
     componentDidMount () {
-        fetch(this.props.funcionalidades.populares ? `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&page=${this.state.pageNumber}` : `https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}&page=${this.state.pageNumber}`)
+        fetch(this.props.funcionalidades.popular ? `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&page=${this.state.numeroPagina}` : `https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}&page=${this.state.numeroPagina}`)
         .then(response=>response.json())
         .then(data=> {
            /*  console.log(data) */
@@ -24,11 +24,11 @@ class ListadoDetalle extends Component{
     }
 
     masPeliculas() {
-        fetch(this.props.funcionalidades.populares ? `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&page=${this.state.pageNumber}` : `https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}&page=${this.state.pageNumber}`)
+        fetch(this.props.funcionalidades.popular ? `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&page=${this.state.numeroPagina}` : `https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}&page=${this.state.numeroPagina}`)
         .then(response=>response.json())
         .then(data=> {
             console.log(data)
-            this.setState({datos: this.state.datos.concat(data.results), pageNumber: this.state.pageNumber + 1})
+            this.setState({datos: this.state.datos.concat(data.results), numeroPagina: this.state.numeroPagina + 1})
             })
         .catch(error=>console.log('El error fue: ' + error))
     }
@@ -36,13 +36,14 @@ class ListadoDetalle extends Component{
     prevRecarga(e){ 
         e.preventDefault();
     };
+
     saveChanges(e){ 
-        this.setState({input: e.target.value, pageNumber: 0}); 
-        fetch (`https://api.themoviedb.org/3/movie/${this.state.input}/lists?api_key=66374e925f9ce0061d8e10191732f374&page=${this.state.pageNumber}`)
+        this.setState({input: e.target.value, numeroPagina: 0}); 
+        fetch (`https://api.themoviedb.org/3/movie/${this.state.input}/lists?api_key=66374e925f9ce0061d8e10191732f374&page=${this.state.numeroPagina}`)
         .then(response=>response.json())
         .then(data=> {
             console.log(data)
-            this.setState({datos: this.state.datos, pageNumber: this.state.pageNumber})
+            this.setState({datos: this.state.datos, numeroPagina: this.state.numeroPagina})
         })
         .catch(error=> console.log('el error fue' + error))
         console.log(this.state.input);
@@ -56,7 +57,7 @@ class ListadoDetalle extends Component{
         /* console.log(this.props.funcionalidades) */
         return (
             <React.Fragment>
-                <h1>{this.props.funcionalidades.populares ? 'Peliculas Populares' : 'Peliculas en Cartel'}</h1>
+                <h1>{this.props.funcionalidades.popular ? 'Peliculas Populares' : 'Peliculas en Cartel'}</h1>
                 
                 <form onSubmit={(e) => this.prevRecarga(e)}>
                     
@@ -68,11 +69,11 @@ class ListadoDetalle extends Component{
 
                 <section className='card-container'>
                     {this.state.datos === '' ? <h3>Cargando ...</h3> : 
-                    this.state.datos.map((unPersonaje, idx) => <UnaPeliculaListado props={unPersonaje} key={idx} />)
+                    this.state.datos.map((unPersonaje, idx) => <UnaPelicula props={unPersonaje} key={idx} />)
                     }
                 </section>
-                {this.props.funcionalidades.cargarMas ? <button onClick={() => this.masPeliculas()}> Mas Peliculas </button> : ''}                
-                {this.props.funcionalidades.verTodas ? <h1><Link to={this.props.funcionalidades.populares ? '/populares' : '/cartel'}> Ver todas las {this.props.funcionalidades.populares ? 'Peliculas Populares' : 'Peliculas en Cartel'} </Link></h1> : ''}                
+                {this.props.funcionalidades.CargarMas ? <button onClick={() => this.masPeliculas()}> Mas Peliculas </button> : ''}                
+                {this.props.funcionalidades.verTodas ? <h1><Link to={this.props.funcionalidades.popular ? '/populares' : '/cartel'}> Ver todas las {this.props.funcionalidades.popular ? 'Peliculas Populares' : 'Peliculas en Cartel'} </Link></h1> : ''}                
             </React.Fragment>
         )
 
