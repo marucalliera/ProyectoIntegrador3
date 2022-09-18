@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import Tarjeta from '../Tarjeta/Tarjeta';
-import './UnaPelicula.css'
+
+
 
 
 class UnaPelicula extends Component{
