@@ -62,14 +62,15 @@ class Listado extends Component{
                 <h1>{titulo}</h1>
                 <div className={this.props.funcionalidades.filtroFormulario ? 'arriba-todas' : 'ocultar'}>
                     <Form filtrarPelis={(Filtro)=>this.filtrarPeliculas(Filtro)}/>
+                    <br></br>
                 </div>
                 <section className='card-container'>
                     {this.state.mapeliculas === '' ? <h3>Cargando ...</h3> : 
                     this.state.mapeliculas.map((unaPelicula, idx) => <UnaPelicula props={unaPelicula} key={idx} />)
                     }
                 </section>     
-                {this.props.funcionalidades.verTodas ? <Link to={ this.props.funcionalidades.popular ? '/populares' : '/cartelera'}> Ver Todas Las Peliculas  {this.props.funcionalidades.popular ? 'Peliculas Populares' : 'Peliculas en Cartel'}</Link>: ''}
-                {this.props.funcionalidades.CargarMas ?   <button className='cargar' type="button" onClick={ ()=>this.cargarMas()}> Cargar Más Películas </button>  : ''}
+                {this.props.funcionalidades.verTodas ? <Link to={ this.props.funcionalidades.popular ? '/populares' : '/cartelera'} className="vertutti"> Ver Todas Las  {this.props.funcionalidades.popular ? 'Peliculas Populares' : 'Peliculas en Cartel'}</Link>: ''}
+                {this.props.funcionalidades.CargarMas ?   <button className='cargar' type="search" onClick={ ()=>this.cargarMas()}> Cargar Más Películas </button>  : ''}
            
             </React.Fragment>
         )

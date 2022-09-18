@@ -3,7 +3,6 @@ nav{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 20px;
     background-color:rgba(196, 198, 255);
 }
 
@@ -24,6 +23,10 @@ nav ul {
 
 .main-nav li:hover{
     border:1px solid black;
-    padding: 2px;
     font: bold;
+}
+
+.main-nav img{
+    height: 55px;
+
 }

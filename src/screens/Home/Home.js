@@ -14,11 +14,30 @@ class Home extends Component {
             resultadoBusqueda: []
         }
     }
+    
+    GuardarCambios (event){
+        this.setState({input:event.target.value})
+    }
+    
+    PrevenirCarga (event){
+        event.preventDefault();
+
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=73bb2c441012fc5a8247a1d5cb33d69a&language=en-US&page=1&include_adult=true&query=${this.state.input}`)
+        .then(res => res.json())
+        .then(data => this.setState({
+            resultadoBusqueda: data.results
+        }, () => console.log(this.state.resultadoBusqueda)))
+        //Hacer busqueda al endpoint de busqueda
+        // fetch con el texto a buscar
+    }
+
+
     render(){
         //console.log(this.state.input);
         return (
             <>
-            <Busqueda/>
+            <br></br>
+            <Busqueda GuardarCambios={(e)=>this.GuardarCambios(e)} PrevenirCarga={(e)=>this.PrevenirCarga(e)} value={this.state.input} />
             { 
                 this.state.resultadoBusqueda.length <= 0 ?
                 <React.Fragment>

@@ -24,12 +24,11 @@ class Busqueda extends Component{
     render () {
         return (
             <React.Fragment>
-                <form onSubmit={(evento) => this.evitarRefresh(evento)}>
-                    <input type='text' placeholder='Buscar' onChange={(evento) => this.capturarDatos(evento)} value={this.state.input} />
-                    {
-                        this.state.input ? <Link to={`/busqueda/${this.state.input}`}><input type='submit' value='submit' />  </Link> :<input type='submit' value='submit' /> 
-                    }
-                </form> 
+            <div className="uk-navbar-right">
+                <form onSubmit = {(event)=> this.props.PrevenirCarga(event)} className="uk-search uk-search-default">
+                    <input type='search' className="uk-search-input" placeholder="Buscar..." onChange = {(event) => this.props.GuardarCambios(event)} value = {this.props.value} />
+                </form>
+            </div>
             </React.Fragment>
                 )
         

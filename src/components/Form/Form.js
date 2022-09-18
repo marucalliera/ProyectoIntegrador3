@@ -20,10 +20,15 @@ class Form extends Component{
     }
     render(){
         return(
-            <form onSubmit={(evento)=>this.evitarRefresh(evento)} className='mb-4'>
-                <input onChange={(evento)=>this.capturarDatos(evento)} type="text" name="usuario" value={this.state.value} />
+            <React.Fragment>
+            <div className="uk-navbar-right">
+                <form onSubmit={(evento)=>this.evitarRefresh(evento)} className='mb-4'>
+                    <input onChange={(evento)=>this.capturarDatos(evento)} type="search" placeholder="Buscar..." value={this.state.value} />
                 
-            </form>)
+                </form>
+            </div>
+            </React.Fragment>
+            )
 
         }
 }
