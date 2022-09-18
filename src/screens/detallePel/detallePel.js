@@ -29,6 +29,7 @@ class Detail extends Component{
                 {
                 this.state.info === [] ? <h3>Cargando</h3> : 
                     <div>
+                        <article className='character-card' > 
                         <img src={`https://image.tmdb.org/t/p/w342${this.state.info.poster_path}`} alt=''/>
                         <h1>  {this.state.info.title}  </h1>
                         <p>{this.state.info.popularity}</p>
@@ -39,6 +40,7 @@ class Detail extends Component{
                             {/*this.state.info.genres.map((genero, idx) => <li key={idx}> {genero.name} </li>)*/}
                         </ul>
                         <p>Agregar a favoritos</p>
+                        </article>
                     </div>
                     
                 
