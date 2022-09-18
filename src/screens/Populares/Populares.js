@@ -1,7 +1,7 @@
 import React from "react";
 import Listado from "../../components/Listado/Listado";
 
-function Populares() {
+function Popular() {
     return (
         <React.Fragment>            
             <Listado  funcionalidades={{verTodas: false, filtroFormulario: true, CargarMas: true, popular: true}} />
@@ -11,4 +11,4 @@ function Populares() {
     );
 }
 
-export default Populares;
+export default Popular;

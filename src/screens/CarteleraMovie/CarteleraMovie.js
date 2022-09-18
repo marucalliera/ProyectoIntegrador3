@@ -4,7 +4,7 @@ import React from "react";
  function CarteleraMovie() {
      return (
          <React.Fragment>            
-             <Listado  funcionalidades={{verTodas: false, filtroFormulario: true, CargarMas: true, populares: false}} />
+             <Listado  funcionalidades={{verTodas: false, filtroFormulario: true, CargarMas: true, popular: false}} />
 
          </React.Fragment>
 

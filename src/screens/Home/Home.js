@@ -23,8 +23,8 @@ class Home extends Component {
                 this.state.resultadoBusqueda.length <= 0 ?
                 <React.Fragment>
                     <br></br>
-                    <Listado  funcionalidades={{verTodas: true, filtroFormulario: false, CargarMas: false, populares: true}} />
-                    <Listado  funcionalidades={{verTodas: true, filtroFormulario: false, CargarMas: false, populares: false}} />
+                    <Listado  funcionalidades={{verTodas: true, filtroFormulario: false, CargarMas: false, popular: true}} />
+                    <Listado  funcionalidades={{verTodas: true, filtroFormulario: false, CargarMas: false, popular: false}} />
 
                 </React.Fragment>
                 :
