@@ -4,10 +4,11 @@
     padding: 10px;
     margin-bottom: 20px;
     width: 24%;
-    background: rgba(75, 39, 157, 0.795);
+    background: rgba(196, 198, 255);;
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(55, 61, 129, 0.15);
 }
+
 .character-card img{
     width: 100%;
     margin-bottom: 20px; 
@@ -23,12 +24,13 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 .character-card h2 {
     margin: 2px 0;
 }
-.more{
-    color: hsl(26, 95%, 55%);
+
+p.more{
+    color: rgba(0, 0, 0);
     text-align: right;
 }
 .delete {
-    color: rgba(255, 0, 0, 0.807);
+    color: rgba(196, 198, 255);
     text-align: right;
 }
 .more:hover,
