@@ -23,16 +23,17 @@ class Busqueda extends Component{
    
     render () {
         return (
-            <React.Fragment>
+        <React.Fragment>
             <div className="uk-navbar-right">
-                <form onSubmit = {(event)=> this.props.PrevenirCarga(event)} className="uk-search uk-search-default">
-                    <input type='search' className="uk-search-input" placeholder="Buscar..." onChange = {(event) => this.props.GuardarCambios(event)} value = {this.props.value} />
+                <form onSubmit = {(e)=> this.props.PrevenirCarga(e)} className="uk-search uk-search-default">
+                    <input type='search' className="uk-search-input" placeholder="Buscar..." onChange = {(e) => this.props.GuardarCambios(e)} value = {this.props.value} />
                 </form>
             </div>
-            </React.Fragment>
-                )
-        
-            }
+        </React.Fragment>
+                
+        )
+
+    }
         }
         
         
