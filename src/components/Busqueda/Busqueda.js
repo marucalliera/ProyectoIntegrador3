@@ -1,3 +1,4 @@
+//import { relativeTimeThreshold } from 'moment';
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './busqueda.css'
@@ -5,22 +6,11 @@ import './busqueda.css'
 class Busqueda extends Component{
     constructor(props){
         super(props);
-        this.state={
-            input: "",
+        this.state = {
+       
         }
     }
-    evitarRefresh(evento){
-        evento.preventDefault();
-        
-    }
 
-    
-    capturarDatos(evento){
-        this.setState({
-            input: evento.target.value
-        },);
-    };
-   
     render () {
         return (
         <React.Fragment>
@@ -29,12 +19,11 @@ class Busqueda extends Component{
                     <input type='search' className="uk-search-input" placeholder="Buscar..." onChange = {(e) => this.props.GuardarCambios(e)} value = {this.props.value} />
                 </form>
             </div>
-        </React.Fragment>
+            </React.Fragment>
                 
         )
 
     }
-        }
-        
-        
-        export default Busqueda;
+}
+
+export default Busqueda;

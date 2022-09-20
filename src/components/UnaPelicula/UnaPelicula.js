@@ -91,15 +91,14 @@ class UnaPelicula extends Component{
     render () {
         return (
             <article className='character-card' >
-            <p onClick = {()=>this.agregarYQuitarDeFavoritos(this.props.props.id)}>{this.state.favMessage}</p>
-            <Link to={`/unapelicula/id/${this.props.props.id}`}>
-            <img src={`https://image.tmdb.org/t/p/w342${this.props.props.poster_path}`} alt="" />
-            </Link> 
-            <h2> {this.props.props.title} </h2> 
-            <p onClick={() => this.verDescripcion()} className='more'> {this.state.textoDescripcion} </p>
-            <p className={this.state.claseDescripcion} >Descripcion: {this.props.props.overview}</p>
-
-        </article>
+                <p onClick = {()=>this.agregarYQuitarDeFavoritos(this.props.props.id)}>{this.state.favMessage}</p>
+                <Link to={`/unapelicula/id/${this.props.props.id}`}>
+                    <img src={`https://image.tmdb.org/t/p/w342${this.props.props.poster_path}`} alt="" />
+                </Link> 
+                <h2> {this.props.props.title} </h2> 
+                <p onClick={() => this.verDescripcion()} className='more'> {this.state.textoDescripcion} </p>
+                <p className={this.state.claseDescripcion} >Descripcion: {this.props.props.overview}</p>
+            </article>
         )
 
     }

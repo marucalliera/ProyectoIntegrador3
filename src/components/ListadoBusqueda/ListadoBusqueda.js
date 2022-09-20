@@ -34,10 +34,12 @@ class ListadoBusqueda extends Component{
     render () {
         return (
             <React.Fragment>
-                {
-                this.state.info === [] ? <h3>Cargando</h3> : <div> { this.state.info.map((unaPelicula, idx) => <Tarjeta info={unaPelicula} key={idx}/>)  }
+                <section className="card-container">
+                    {
+                    this.state.info === [] ? <h3>Cargando</h3> : <div> { this.state.info.map((unaPelicula, idx) => <Tarjeta info={unaPelicula} key={idx}/>)  }
                 </div>
-            }
+                    }
+                </section>
             </React.Fragment>
         )
     }
